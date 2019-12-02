@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SustainableFarmingApp.Views.SignUpPage" BackgroundImage="Farming3.jpg">
+    
+        <ScrollView>
+        <StackLayout>
+            <Label Text="Sign Up Page" TextColor="Azure"
+                   FontSize="Large"
+                   
+                   
+                   Scale="1.7"
+                   VerticalOptions="CenterAndExpand"
+                   HorizontalOptions="Center"/>
+            <Label Text="Name" TextColor="White"
+               FontSize="Large"
+                HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Name}" TextColor="White" FontSize="Medium"  />
+
+            <Label Text="Surname" TextColor="White"
+               FontSize="Large"
+                HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Surname}" TextColor="White" FontSize="Medium"  />
+
+            <Label Text="ID (optional)" TextColor="White"
+               FontSize="Large"
+                HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Entry Text="{Binding ID}" TextColor="White" FontSize="Medium"  />
+
+            <Label Text="Email" TextColor="White"
+               FontSize="Large"
+                HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Email}" TextColor="White" FontSize="Medium"  />
+
+            <Label Text="Phone Number" TextColor="White"
+               FontSize="Large"
+                HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Entry Text="{Binding PhoneNumber}" TextColor="White" FontSize="Medium"  />
+
+            <Label Text="Password" TextColor="White"
+               FontSize="Large"
+                HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Password}" TextColor="White" FontSize="Medium"  />
+
+            <Label Text="Confirm Password" TextColor="White"
+               FontSize="Large"
+                HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+            <Entry Text="{Binding Password}" TextColor="White" FontSize="Medium"  />
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Save Details"  Grid.Column="0" CornerRadius="21" />
+                    <Button Text="Cancel"  Grid.Column="1" CornerRadius="21"/>
+
+                </Grid>
+            
+            
+
+
+
+
+        </StackLayout>
+        </ScrollView>
+    
+</ContentPage>
