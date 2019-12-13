@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SustainableFarmingApp.Views.DonationPage" BackgroundImageSource="farm4">
+    <StackLayout>
+
+        <Label Text="HOW MUCH VEGGIES"
+
+               FontSize="40"
+
+               FontAttributes="Bold"
+
+               HorizontalOptions="CenterAndExpand"
+               TextColor="Black"
+               />
+        <Label Text="Name" HorizontalOptions="CenterAndExpand" TextColor="white" FontSize="Medium" FontAttributes="Bold"/>
+        <Entry Text="{Binding VeggieOrders.Name}" TextColor="white" FontSize="Medium"/>
+        <Label Text="Place to donate" HorizontalOptions="CenterAndExpand" TextColor="white" FontSize="Medium" FontAttributes="Bold"/>
+        <Entry Text="{Binding VeggieOrders.PlaceToDonate}" TextColor="white" FontSize="Medium"/>
+        <Label Text="Name of Veggie" HorizontalOptions="CenterAndExpand" TextColor="white" FontSize="Medium" FontAttributes="Bold"/>
+        <Entry Text="{Binding VeggieOrders.NameOfVeggie}" TextColor="white" FontSize="Medium"/>
+
+
+
+
+        <Stepper x:Name="stepper"
+
+                 Minimum="0"
+
+                 Maximum="100"
+
+                 Increment="1"
+
+                 HorizontalOptions="Center"
+
+                 VerticalOptions="CenterAndExpand"
+                 
+                 Value="{Binding VeggieOrders.VeggieAmount }"
+                 
+                 />
+
+
+
+        <Label Text="{Binding Source={x:Reference stepper},
+
+                              Path=Value,
+
+                              StringFormat='Veggie Amount {0:F1}'}"
+
+               FontSize="Large"
+
+               HorizontalOptions="Center"
+               TextColor="White"
+               FontAttributes="Bold"
+              
+
+            VerticalOptions="CenterAndExpand" />
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+
+
+            </Grid.ColumnDefinitions>
+
+            <Button Text="Location to Donate" Command="{Binding Location}" Grid.Column="0" CornerRadius="21"/>
+            <Button Text="Donate" Command="{Binding Donate}" Grid.Column="1" CornerRadius="21"/>
+            </Grid>
+
+
+    </StackLayout>
+
+</ContentPage>

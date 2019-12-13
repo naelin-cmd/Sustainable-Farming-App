@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="SustainableFarmingApp.Views.FarmingDetails"
+             Padding="10, 0"
+             xmlns:b="clr-namespace:Prism.Behaviors;assembly=Prism.Forms"  >
+
+    <ContentPage.Content>
+    
+        
+        <StackLayout>
+            <Label Text="SearchBar"
+
+               FontSize="30"
+
+               FontAttributes="Bold"
+
+               HorizontalOptions="Center"/>
+
+
+
+
+            <SearchBar 
+                Placeholder="Search"
+
+                   SearchCommand="{Binding Search}" />
+
+
+
+            <ScrollView VerticalOptions="FillAndExpand">
+
+                <Label  />
+            </ScrollView>
+
+
+
+            <ListView ItemsSource="{Binding VegDetails}" RowHeight="300">
+                <ListView.Behaviors>
+                <b:EventToCommandBehavior EventName="ItemTapped" 
+                                      Command="{Binding VegDetailCommand}"
+                                      EventArgsParameterPath="Item" />
+                </ListView.Behaviors>
+                <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <ViewCell.View>
+                                    
+                                <StackLayout>
+                                    <Grid>
+
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto"/> 
+                                            <RowDefinition Height="Auto"/>
+                                        
+
+
+
+
+
+
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                           
+                                            <ColumnDefinition Width="Auto"/>
+                                            <ColumnDefinition Width="Auto"/>
+
+
+                                        </Grid.ColumnDefinitions>
+                                        
+                                        <Label Text="Name" Grid.Row="0" Grid.Column="0" FontSize="Large" HorizontalOptions="Start" TextColor="Salmon" TextDecorations="Underline"/>
+
+                                        <Label Text="ImgSrc" Grid.Row="0" Grid.Column="1"  FontSize="Large" HorizontalOptions="CenterAndExpand" TextColor="salmon" TextDecorations="Underline"/>
+
+                                        
+                                            <Label Text="{Binding Name}"  TextColor="Black" Grid.Row="1" Grid.Column="0" FontSize="Medium" />
+                                        
+
+                                       
+                                        <Image Source="{Binding ImgSrc} "
+                                           Aspect="AspectFill"  Grid.Row="1" Grid.Column="1"/>
+                                           
+
+                                    </Grid>
+
+                                </StackLayout>
+                            </ViewCell.View>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+           
+            </StackLayout>
+    </ContentPage.Content>
+
+
+
+
+
+</ContentPage>
+    
+
+    

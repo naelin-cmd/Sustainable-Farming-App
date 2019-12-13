@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SustainableFarmingApp.Views.DetailsPage" >
+
+    <ScrollView >
+        <StackLayout>
+            <Image Source="Info.png"/>
+
+            <Label Text="Sunlight" FontSize="Large" TextColor="Green" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding VegDetail.Sunlight}" TextColor="Black" FontSize="Medium" />
+            <Label Text="Soil" FontSize="Large" TextColor="Green" HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding VegDetail.Soil}" TextColor="Black" FontSize="Medium" />
+            <Label Text="Yield" FontSize="Large" TextColor="Green" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding VegDetail.Yield}" TextColor="Black" FontSize="Medium" />
+            <Label Text="WaterContent" FontSize="Large" TextColor="Green" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding VegDetail.WaterContent}" TextColor="Black" FontSize="Medium"/>
+            <Label Text="TimeToPlant" FontSize="Large" TextColor="Green" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding VegDetail.TimeToPlant}" TextColor="Black" FontSize="Medium" />
+            <Label Text="HowLongItTakeToHarvest" FontSize="Large" TextColor="Green" HorizontalOptions="CenterAndExpand"/>
+            <Label Text="{Binding VegDetail.HowLongItTakeToHarvest}" TextColor="Black" FontSize="Medium"/>
+        </StackLayout>
+    </ScrollView>
+  
+</ContentPage>

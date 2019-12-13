@@ -2,9 +2,9 @@
 
 namespace SustainableFarmingApp.Views
 {
-    public partial class LoginPage : ContentPage
+    public partial class DetailsPage : ContentPage
     {
-        public LoginPage()
+        public DetailsPage()
         {
             InitializeComponent();
         }

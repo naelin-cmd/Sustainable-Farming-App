@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="SustainableFarmingApp.Views.MasterPage" >
+    <MasterDetailPage.Master>
+        <NavigationPage Title="Required Foo" Icon="hamburger.png">
+            <x:Arguments>
+                <ContentPage Title="Menu">
+                   
+                    <StackLayout Padding="0">
+                        <Image Source="Login2.png"/>
+
+                        <Label Text="Your Profile" TextColor="Black" FontSize="Large" HorizontalTextAlignment="Center"/>
+                        <Button Text="Location of Plant Nursery" Command="{Binding Location}" TextColor="blue"/>
+                       
+                        <Button Text="Donate Here" Command="{Binding Donate}" TextColor="blue"/>
+                        <Button Text="Sign Out " Command="{Binding CommandSignUpName}" TextColor="blue"/>
+                        <Button Text="Home" Command="{Binding Home}" HorizontalOptions="CenterAndExpand" TextColor="blue"/>
+
+                    </StackLayout>
+                </ContentPage>
+            </x:Arguments>
+        </NavigationPage>
+
+
+    </MasterDetailPage.Master>
+  
+</MasterDetailPage>

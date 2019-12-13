@@ -1,5 +1,7 @@
 ﻿using Prism;
 using Prism.Ioc;
+using SustainableFarmingApp.Services;
+using SustainableFarmingApp.Services.Interfaces;
 using SustainableFarmingApp.ViewModels;
 using SustainableFarmingApp.Views;
 using Xamarin.Forms;
@@ -28,11 +30,19 @@ namespace SustainableFarmingApp
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
+            containerRegistry.RegisterSingleton<IVegDatabase, VegDetailsDatabase>();
+            containerRegistry.RegisterSingleton<IMapping, MappingService>();
+
             containerRegistry.RegisterForNavigation<NavigationPage>();
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             
-            containerRegistry.RegisterForNavigation<LoginPage, LoginPageViewModel>();
+            containerRegistry.RegisterForNavigation<MasterPage, MasterPageViewModel>();
             containerRegistry.RegisterForNavigation<SignUpPage, SignUpPageViewModel>();
+
+            containerRegistry.RegisterForNavigation<FarmingDetails, FarmingDetailsViewModel>();
+            containerRegistry.RegisterForNavigation<Maps, MapsViewModel>();
+            containerRegistry.RegisterForNavigation<DetailsPage, DetailsPageViewModel>();
+            containerRegistry.RegisterForNavigation<DonationPage, DonationPageViewModel>();
         }
     }
 }
